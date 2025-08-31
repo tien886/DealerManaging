@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DealerManaging.Home"
+             Title="UIT TOGETHER">
+    <VerticalStackLayout>
+        <Grid RowDefinitions="50, Auto, Auto, *"
+          ColumnDefinitions=".50*, .50*"
+          Padding="10"
+          ColumnSpacing="10"
+          RowSpacing="10">
+
+            <Button Text="Tra cứu đại lý"
+                Grid.Column="0"
+                Grid.Row="0"
+                WidthRequest="125"
+                HorizontalOptions="Start"
+                  
+                    />
+
+            <HorizontalStackLayout Grid.Row="0"
+                               Grid.Column="1"
+                               Spacing="10"
+                               HorizontalOptions="End">
+                <Button Text="Tiếp nhận đại lý" Clicked="Button_Clicked"  />
+                <Button Text="Cập nhập đại lý"/>
+                <Button Text="Xóa đại lý"/>
+            </HorizontalStackLayout>
+
+            <Border Grid.Row="1" Grid.ColumnSpan="2" Padding="10,10" BackgroundColor="Gray" >
+                <Grid ColumnDefinitions="*,*,*,*,*,*,*,*"
+                  >
+                    <Label Grid.Row="0" Grid.Column="0" Text="Mã đại lý" HorizontalOptions="Center"/>
+                    <Label Grid.Row="0" Grid.Column="1" Text="Tên đại lý" HorizontalOptions="Center"/>
+                    <Label Grid.Row="0" Grid.Column="2" Text="Địa chỉ" HorizontalOptions="Center"/>
+                    <Label Grid.Row="0" Grid.Column="3" Text="Quận" HorizontalOptions="Center"/>
+                    <Label Grid.Row="0" Grid.Column="4" Text="Loại đại lý" HorizontalOptions="Center"/>
+                    <Label Grid.Row="0" Grid.Column="5" Text="Điện thoại" HorizontalOptions="Center"/>
+                    <Label Grid.Row="0" Grid.Column="6" Text="Ngày tiếp nhận" HorizontalOptions="Center"/>
+                    <Label Grid.Row="0" Grid.Column="7" Text="Tiền nợ" HorizontalOptions="Center"/>
+                </Grid>
+            </Border>
+            <ScrollView x:Name="DealerContainer" Grid.Row="3" Grid.ColumnSpan="2">
+                <Grid ColumnDefinitions="*,*,*,*,*,*,*,*">
+                    <Label Grid.Column="0" Text="{Binding id}"/>
+                    <Label Grid.Column="1" Text="{Binding name}"/>
+                    <Label Grid.Column="2" Text="{Binding address}"/>
+                    <Label Grid.Column="3" Text="{Binding district}"/>
+                    <Label Grid.Column="4" Text="{Binding type}"/>
+                    <Label Grid.Column="5" Text="{Binding phonenumber}"/>
+                    <Label Grid.Column="6" Text="{Binding date}"/>
+                    <Label Grid.Column="7" Text="{Binding debt}"/>
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

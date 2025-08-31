@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:DealerManaging.Models"
+             x:Class="DealerManaging.AddDealer"
+             x:DataType="models:DaiLy">
+    <VerticalStackLayout Padding="20"
+                     Spacing="15"
+                    
+                     WidthRequest="800">
+
+        <Label Text="Tiếp nhận đại lý"
+           FontSize="22"
+           FontAttributes="Bold"
+           HorizontalOptions="Center"/>
+
+        <Border Stroke="LightGray"
+        StrokeThickness="1"
+        BackgroundColor="Black"
+        StrokeShape="RoundRectangle 10,10,10,10"
+        Shadow="5,5,10,Black"
+        Padding="20">
+
+            <VerticalStackLayout Spacing="15">
+
+                <Grid ColumnSpacing="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Text="Mã đại lý"/>
+                    <Label Grid.Column="1" Text="Tên đại lý"/>
+                    <Label Grid.Column="2" Text="Loại đại lý"/>
+                    <Label Grid.Column="3" Text="Tên quận"/>
+                </Grid>
+
+                <Grid ColumnSpacing="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Entry Grid.Column="0" IsEnabled="False" Background="Gray" WidthRequest="160" HeightRequest="30" TextColor="Black" Text="{Binding MaDaiLy}"/>
+                    <Entry Grid.Column="1" IsEnabled="True" Background="White" WidthRequest="160" HeightRequest="30" TextColor="Black" Text= "{Binding TenDaiLy}"/>
+                    <Picker Grid.Column="2" Background="White" WidthRequest="160" HeightRequest="40" TextColor="Black" >
+                        <Picker.Items>
+                            <x:String>Loại 1</x:String>
+                            <x:String>Loại 2</x:String>
+                            <x:String>Loại 3</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Picker Grid.Column="3" Background="White" WidthRequest="160" HeightRequest="40" TextColor="Black">
+                        <Picker.Items>
+                            <x:String>Quận 1</x:String>
+                            <x:String>Quận 2</x:String>
+                            <x:String>Quận 3</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </Grid>
+                <Grid ColumnSpacing="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Text="Số điện thoại"/>
+                    <Label Grid.Column="1" Text="Email"/>
+                    <Label Grid.Column="2" Text="Ngày tiếp nhận"/>
+                </Grid>
+
+                <Grid ColumnSpacing="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Entry Grid.Column="0" Background="White" WidthRequest="200" HeightRequest="40" TextColor="Black" HorizontalOptions="Start" Text= "{Binding DienThoai}"/>
+                    <Entry Grid.Column="1" Background="White" WidthRequest="200" HeightRequest="40" TextColor="Black" HorizontalOptions="Start" Text= "{Binding Email}" />
+                    <DatePicker Grid.Column="2" Background="White" WidthRequest="200" HeightRequest="40" TextColor="Black" HorizontalOptions="Start"/>
+                </Grid>
+
+                <Grid ColumnSpacing="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Text="Gmail"/>
+                </Grid>
+
+                <Grid ColumnSpacing="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Entry Grid.Column="0" Background="White" HeightRequest="40" TextColor="Black" Text= "{Binding DiaChi}"/>
+                </Grid>
+
+            </VerticalStackLayout>
+        </Border>
+
+
+        <Grid ColumnSpacing="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnAdd" Grid.Column="0" Text="➕ Tiếp nhận đại lý" BackgroundColor="#2196F3" TextColor="White" Clicked="btnAdd_Clicked"/>
+            <Button x:Name="btnReset" Grid.Column="1" Text="🔄 Đại lý mới" BackgroundColor="#00BCD4" TextColor="White" Clicked="btnReset_Clicked" />
+            <Button x:Name="btnOut" Grid.Column="2" Text="❌ Thoát" BackgroundColor="#E53935" TextColor="White" Clicked="btnOut_Clicked"/>
+        </Grid>
+    </VerticalStackLayout>
+
+</ContentPage>
